@@ -1,0 +1,21 @@
+{
+  "name": "tapetwelvenuxt",
+  "version": "1.0.0",
+  "description": "artist website for tape twelve using nuxt and vuejs",
+  "author": "Bernard Cooley",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate",
+    "precommit": "npm run lint"
+  },
+  "dependencies": {
+    "cross-env": "^5.2.0",
+    "nuxt": "^2.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0"
+  }
+}
