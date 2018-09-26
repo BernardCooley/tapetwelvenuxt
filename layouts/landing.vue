@@ -1,25 +1,13 @@
 <template>
-  <div class="defaultLayout">
+  <div class="landingPageLayout">
     <div class="layer">
-      <navigation></navigation>
       <nuxt />
     </div>
   </div>
 </template>
 
-<script>
-import Navigation from '~/components/Navigation.vue'
-
-export default {
-  components: {
-    Navigation
-  }
-}
-</script>
-
-
 <style scoped>
-.defaultLayout {
+.landingPageLayout {
   position: fixed;
   top: 0;
   z-index: -2;
@@ -28,7 +16,7 @@ export default {
   bottom: 0;
   background-size: cover;
   background-position: center;
-  background-image: url('~/assets/images/bushes/background-path-desktop.png');
+  background-image: url('~/assets/images/photos/celtronic.jpg');
 }
 .layer {
   position: fixed;
