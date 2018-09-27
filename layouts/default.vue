@@ -3,16 +3,19 @@
     <div class="layer">
       <navigation></navigation>
       <nuxt />
+      <foot></foot>
     </div>
   </div>
 </template>
 
 <script>
 import Navigation from '~/components/Navigation.vue'
+import Foot from '~/components/Foot.vue'
 
 export default {
   components: {
-    Navigation
+    Navigation,
+    Foot
   }
 }
 </script>

@@ -106,6 +106,7 @@ export default {
 <style>
 .contactContainer {
   margin: auto;
+  margin-bottom: 50px;
   width: 40%;
   background-color: hsla(0, 0%, 68%, 0.1);
 }

@@ -1,7 +1,6 @@
 <template>
   <div class="photosContainer">
     <div id="photos" class="imagesPageContainer" fxLayout="column">
-      <span class="pageTitle">Photos</span>
 
       <div fxShow class="ImageContainer" fxLayoutWrap>
         <img src="assets/images/photos/emom-1.jpg">

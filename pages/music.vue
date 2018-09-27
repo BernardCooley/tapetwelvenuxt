@@ -1,7 +1,6 @@
 <template>
   <div class="musicContainer">
     <div id="music" class="musicPageContainer">
-      <span class="pageTitle">Music</span>
       <div class="musicContainer">
         <div class="song">
           <iframe style="border: 0; width: 350px; height: 442px;" src="https://bandcamp.com/EmbeddedPlayer/track=1283671493/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/" seamless><a href="http://tapetwelve.bandcamp.com/track/spectral-de-esser">Spectral De-Esser by Tape Twelve</a></iframe>
@@ -22,7 +21,9 @@ export default {
 
 <style scoped>
 .musicContainer {
-  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .song {

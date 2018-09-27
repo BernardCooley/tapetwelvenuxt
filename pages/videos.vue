@@ -1,7 +1,6 @@
 <template>
   <div class="videosContainer">
     <div id="videos" class="videosPageContainer" fxLayout="column">
-      <span class="pageTitle">Videos</span>
       <div class="videoContainer">
         <div class="video">
           <iframe width="360" height="200" src="https://www.youtube.com/embed/peCQwX_JCpY" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
@@ -38,7 +37,9 @@ export default {
 
 <style scoped>
 .videoContainer {
-  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .video {

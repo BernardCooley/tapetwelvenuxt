@@ -1,0 +1,43 @@
+<template>
+  <div class="socialLinkContainer">
+    <div>
+      <a href="https://www.facebook.com/TapeTwelve/" target="_blank">
+        <img class="socialLinkImage" src="assets/icons/social/round/Facebook.png">
+    </a>
+        <a href="https://plus.google.com/u/2/112136388785073435454" target="_blank">
+          <img class="socialLinkImage" src="assets/icons/social/round/Google+.png">
+    </a>
+          <a href="https://www.instagram.com/tape_twelve/" target="_blank">
+            <img class="socialLinkImage" src="assets/icons/social/round/Instagram.png">
+    </a>
+            <a href="https://twitter.com/tape_twelve" target="_blank">
+              <img class="socialLinkImage" src="assets/icons/social/round/Twitter.png">
+    </a>
+              <a href="https://www.youtube.com/channel/UCM8l7llHxTBG1MLyVZUEJcA" target="_blank">
+                <img class="socialLinkImage" src="assets/icons/social/round/YouTube.png">
+    </a>
+                <a href="https://www.mixcloud.com/BernardCooley/" target="_blank">
+                  <img class="socialLinkImage" src="assets/icons/social/round/Mixcloud.png">
+    </a>
+                  <a href="https://tapetwelve.bandcamp.com/" target="_blank">
+                    <img class="socialLinkImage" src="assets/icons/social/round/Bandcamp.png">
+    </a>
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+
+}
+</script>
+
+<style scoped>
+.socialLinkContainer {
+  margin: 0 30px 30px 30px;
+}
+img {
+  padding: 10px;
+  height: 50px;
+}
+</style>
