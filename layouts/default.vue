@@ -19,7 +19,10 @@ export default {
 
 
 <style scoped>
+@import url('https://fonts.googleapis.com/css?family=Raleway:200');
+
 .defaultLayout {
+  font-family: 'Raleway';
   position: fixed;
   top: 0;
   z-index: -2;
@@ -29,6 +32,8 @@ export default {
   background-size: cover;
   background-position: center;
   background-image: url('~/assets/images/bushes/background-path-desktop.png');
+  font-size: 10px;
+  color: #bcbcbc;
 }
 .layer {
   position: fixed;
@@ -40,5 +45,6 @@ export default {
   background-size: cover;
   background-position: center;
   background-color: rgba(32, 32, 32, 0.85);
+  overflow: scroll;
 }
 </style>

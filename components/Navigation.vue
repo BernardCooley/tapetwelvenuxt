@@ -62,7 +62,7 @@ export default {
   cursor: pointer;
   padding: 10px;
   margin-top: 15px;
-  color: red;
+  color: inherit;
 }
 
 .navLink:hover {
