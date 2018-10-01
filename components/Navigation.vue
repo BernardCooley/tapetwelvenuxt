@@ -18,7 +18,7 @@
 
     <div class="horzNavContainer">
       <div class="navListItem">
-        <div class="" v-for="page in navPages">
+        <div class="" v-for="page in navPages" v-bind:key="page">
           <a pageScroll class="navLink" :href="page.url">{{page.name}}</a>
         </div>
       </div>
@@ -32,11 +32,11 @@ export default {
   data() {
     return {
       navPages: [
-        { "url": "home", "name": "Home" },
-        { "url": "photos", "name": "Photos" },
-        { "url": "videos", "name": "Videos" },
-        { "url": "music", "name": "Music" },
-        { "url": "contact", "name": "Contact" }
+        { "url": "home", "name": "Home", "current": false },
+        { "url": "photos", "name": "Photos", "current": false },
+        { "url": "videos", "name": "Videos", "current": false },
+        { "url": "music", "name": "Music", "current": true },
+        { "url": "contact", "name": "Contact", "current": false }
       ],
       navShow: false
     }

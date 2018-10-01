@@ -8,14 +8,17 @@
           <div class="errorMessage">{{newsletter.email.errors[0]}}</div>
         </li>
         <li>
-          <button v-on:click.prevent="sendFormData" id="contactBtn" type="submit" class="btn btn-info">Sign Up</button>
+          <button v-on:click.prevent="newsletterSignUp" id="contactBtn" type="submit" class="btn btn-info">Sign Up</button>
         </li>
+        <div :class="successFail">{{successFailMessage}}</div>
       </ul>
     </form>
   </div>
 </template>
 
 <script>
+import db from "../firestore/firebaseInit"
+
 export default {
   data() {
     return {
@@ -49,12 +52,28 @@ export default {
         }
       }
     },
-    sendFormData: function (e) {
+    newsletterSignUp: function (e) {
       this.validation();
       if (!this.errorsBool) {
-        console.log(this.newsletter.email.value)
+        db.collection("newsletter").add({
+          email: this.newsletter.email.value
+        })
+          .then(data => {
+            this.successFail = 'success'
+            this.successFailMessage = "Successfully signed up"
+            this.clearFields(this.newsletter)
+          })
+          .catch(error =>
+            setTimeout(function () {
+              this.successFail = 'fail',
+                this.successFailMessage = "Failed. Please try later"
+            }, 1000)
+          );
         e.preventDefault()
       }
+    },
+    clearFields: function (fields) {
+      fields.email.value = ''
     }
   }
 }
@@ -105,5 +124,13 @@ button {
   color: red;
   font-size: 2em;
   text-align: right;
+}
+.success {
+  color: green;
+  font-size: 2em;
+}
+.fail {
+  color: red;
+  font-size: 2em;
 }
 </style>

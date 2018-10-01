@@ -25,12 +25,15 @@
         <li>
           <button v-on:click.prevent="sendFormData" id="contactBtn" name="contact" type="submit" class="btn btn-info">Submit</button>
         </li>
+        <div :class="successFail">{{successFailMessage}}</div>
       </ul>
     </form>
   </div>
 </template>
 
 <script>
+import db from "../firestore/firebaseInit"
+
 export default {
   data() {
     return {
@@ -53,6 +56,7 @@ export default {
         }
       },
       errorsBool: null,
+      successFail: null
     }
   },
   methods: {
@@ -92,12 +96,31 @@ export default {
     sendFormData: function (e) {
       this.validation();
       if (!this.errorsBool) {
-        console.log(this.contactForm.fName.value)
-        console.log(this.contactForm.lName.value)
-        console.log(this.contactForm.email.value)
-        console.log(this.contactForm.message.value)
+        db.collection("contactMessages").add({
+          firstName: this.contactForm.fName.value,
+          lastName: this.contactForm.lName.value,
+          email: this.contactForm.email.value,
+          message: this.contactForm.message.value
+        })
+          .then(data => {
+            this.successFail = 'success'
+            this.successFailMessage = "Message sent successfully."
+            this.clearFields(this.contactForm)
+          })
+          .catch(error =>
+            setTimeout(function () {
+              this.successFail = 'fail',
+                this.successFailMessage = "Failed. Please try again later."
+            }, 1000)
+          )
         e.preventDefault()
       }
+    },
+    clearFields: function (fields) {
+      fields.fName.value = ''
+      fields.lName.value = ''
+      fields.email.value = ''
+      fields.message.value = ''
     }
   }
 }
@@ -149,5 +172,13 @@ button {
   color: red;
   font-size: 2em;
   text-align: right;
+}
+.success {
+  color: green;
+  font-size: 2em;
+}
+.fail {
+  color: red;
+  font-size: 2em;
 }
 </style>
