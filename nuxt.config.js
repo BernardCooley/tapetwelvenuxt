@@ -1,5 +1,11 @@
 const pkg = require('./package')
 
+const routerBase = process.env.DEPLOY_ENV === 'GH_PAGES' ? {
+  router: {
+    base: '/BernardCooley/'
+  }
+} : {}
+
 module.exports = {
   mode: 'universal',
 
@@ -52,6 +58,6 @@ module.exports = {
     }
   },
   router: {
-    base: '/BernardCooley/'
+    ...routerBase
   }
 }
